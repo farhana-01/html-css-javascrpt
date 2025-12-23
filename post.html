@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Master HTML, CSS, and JavaScript - The essential trio for modern web development.">
+<title>HTML, CSS & JavaScript - The Power Trio</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+/* ===== GLOBAL SAFETY (NO DESIGN CHANGE) ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden; /* horizontal scroll fix */
+}
+
+/* ===== ORIGINAL ANIMATIONS (UNCHANGED) ===== */
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes float-icon {
+  0%,100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-15px) scale(1.08); }
+}
+@keyframes pulse-glow {
+  0%,100% { opacity: .6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+@keyframes gradient-shift {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes sparkle {
+  0%,100%{opacity:0;transform:scale(0)}
+  50%{opacity:1;transform:scale(1)}
+}
+
+.animate-slide-up { animation: slide-up .8s ease-out forwards; }
+.gradient-animate {
+  background-size: 400% 400%;
+  animation: gradient-shift 6s ease infinite;
+}
+.tech-icon {
+  animation: float-icon 4s ease-in-out infinite;
+  transition: all .4s ease;
+}
+.tech-icon:hover {
+  transform: scale(1.25) rotate(10deg);
+  animation: none;
+}
+.sparkle-effect { animation: sparkle 1.5s infinite; }
+.glow-pulse { animation: pulse-glow 2s infinite; }
+
+/* ===== RESPONSIVE FIXES (INVISIBLE) ===== */
+h1 {
+  font-size: clamp(2.8rem, 6vw, 3.75rem); /* same visual scale */
+}
+p {
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+}
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .tech-icons {
+    flex-wrap: wrap;
+    gap: 2.5rem;
+  }
+  article {
+    padding: 2.5rem !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+  #cta-button {
+    width: 100%;
+  }
+}
+</style>
+</head>
+
+<body class="h-full">
+<main class="min-h-screen flex items-center justify-center p-6 gradient-animate"
+style="background:linear-gradient(-45deg,#667eea,#764ba2,#f093fb,#4facfe,#00f2fe);">
+
+<!-- Sparkles -->
+<div class="absolute top-10 left-10 w-4 h-4 sparkle-effect bg-white rounded-full"></div>
+<div class="absolute top-20 right-20 w-3 h-3 sparkle-effect bg-white rounded-full"></div>
+<div class="absolute bottom-20 left-20 w-3 h-3 sparkle-effect bg-white rounded-full"></div>
+<div class="absolute bottom-10 right-10 w-4 h-4 sparkle-effect bg-white rounded-full"></div>
+
+<article class="max-w-2xl w-full rounded-3xl p-10 relative"
+style="background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(248,249,255,.95));
+border:4px solid rgba(255,255,255,.5);
+box-shadow:0 20px 60px rgba(0,0,0,.3);">
+
+<header class="text-center mb-10 animate-slide-up">
+<h1 class="font-black mb-5"
+style="color:transparent;
+background:linear-gradient(135deg,#667eea,#764ba2,#f093fb);
+background-clip:text;
+-webkit-background-clip:text;">
+Master HTML, CSS & JavaScript
+</h1>
+
+<p class="text-2xl font-bold text-purple-700">
+The Power Trio of Web Development 🚀
+</p>
+</header>
+
+<section class="flex justify-center gap-10 mb-12 tech-icons">
+
+<div class="tech-icon text-center">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
+class="w-28 mx-auto" alt="HTML5">
+<p class="mt-3 font-black text-orange-600">HTML5</p>
+</div>
+
+<div class="tech-icon text-center">
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+class="w-28 mx-auto" alt="CSS3">
+<p class="mt-3 font-black text-blue-600">CSS3</p>
+</div>
+
+<div class="tech-icon text-center">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+class="w-28 mx-auto" alt="JavaScript">
+<p class="mt-3 font-black text-yellow-500">JavaScript</p>
+</div>
+
+</section>
+
+<p class="text-center text-gray-700 mb-8">
+These three technologies form the foundation of every website you visit. HTML structures content, CSS makes it beautiful, and JavaScript brings it to life.
+</p>
+
+<footer class="text-center relative">
+<a href="https://farhanaabbasi.com" target="_blank" rel="noopener noreferrer">
+  <button id="cta-button"
+    class="px-14 py-6 rounded-full text-xl font-black text-white shadow-2xl transition hover:scale-110 gradient-animate"
+    style="background:linear-gradient(-45deg,#667eea,#764ba2,#f093fb,#667eea);">
+    Farhana Abbasi Frontend Developer 🎯
+  </button>
+</a>
+<p class="mt-4 text-sm text-indigo-600 font-semibold">
+✨ Building responsive & high-performance websites ✨
+</p>
+</footer>
+
+</article>
+</main>
+
+<script>
+document.getElementById('cta-button').addEventListener('click', function () {
+  this.style.transform = 'scale(0.95)';
+  setTimeout(() => this.style.transform = 'scale(1)', 150);
+});
+</script>
+</body>
+</html>
